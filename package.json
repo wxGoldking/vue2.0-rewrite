@@ -1,0 +1,26 @@
+{
+  "name": "vue2.0-rewrite",
+  "version": "1.0.0",
+  "description": "vue-study-2.0 rewrite",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack-dev-server",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wxGoldking/vue2.0-rewrite.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wxGoldking/vue2.0-rewrite/issues"
+  },
+  "homepage": "https://github.com/wxGoldking/vue2.0-rewrite#readme",
+  "dependencies": {
+    "html-webpack-plugin": "4.4.1",
+    "webpack": "4.44.1",
+    "webpack-cli": "3.3.12",
+    "webpack-dev-server": "3.11.0"
+  }
+}

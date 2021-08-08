@@ -1,28 +1,25 @@
-import observe from "./observe";
-import proxyData from "./proxy";
+import { initState } from "./state";
 
+function initMixin (Vue) {
+  Vue.prototype._init = function (options) {
+    const vm = this;
 
-function initState(vm) {
-  var options = vm.$options;
+    vm.$options = options;
 
-  if(options.data) {
-    initData(vm)
+    initState(vm);
+
+    if (vm.$options.el) {
+      // 挂载函数   Vue.prototype.$mount
+      vm.$mount(vm.$options.el);
+    }
   }
-}
 
-function initData(vm) {
-  var data = vm.$options.data;
-  
-  vm._data = data = typeof data === 'function' ? data.call(vm) : data || {};
-  
-  for (const key in data) {
-    // 代理_data到vm上, 以便使用this.xxx直接访问data
-    proxyData(vm, '_data', key);
-  }
-  // 数据劫持
-  observe(vm._data);
+  Vue.prototype.$mount = function (el) {
+    const vm = this,
+          options = vm.$options;
+  } 
 }
 
 export {
-  initState
+  initMixin
 }

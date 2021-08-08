@@ -9,6 +9,7 @@ vue-study-2.0 rewrite
 2. complier分支 
   ## template -> 编译 .... -> 形成真实DOM
 
+  $mount的工作
 - 1、获取到template
 - 2、template -> AST树
 

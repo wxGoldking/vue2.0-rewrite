@@ -6,11 +6,26 @@
     <title>vue2.0</title>
 </head>
 <body>
-    <div id="app"></div>
+  <div id="app" style="color: red;font-size: 20px;">
+    你好,
+    {{name}}
+    <span class="text" style="color: green">{{age}}</span>
+  </div>
+    
+    <!-- hello     {{name}}
+    <h1>{{ name }}</h1>
+    <ul>
+      <li style="color: green">{{ age }}</li>
+      <li>{{ info.job }}</li>
+    </ul> -->
+
+  <!-- 你好，{{ name }} 欢迎来到小野森森的课堂
+      <span class="text" style="color: green">{{age}}</span>
+      <p>大家都来学习Vue源码</p> -->
     <script src="dist/umd/vue.js"></script>
   <script>
     // options API
-    // 模板: render  >  template   >  html式模板
+    // 模板: render  >  template   >  html式模板(el)
     let vm = new Vue({
       el: '#app',
       data () {
@@ -34,8 +49,8 @@
         }
       }
     })
-    vm.info.students.push([{id: 3, name: '小米'}])
-    vm.name = 'wx'
+    // vm.info.students.push([{id: 3, name: '小米'}])
+    // vm.name = 'wx'
   </script>
 </body>
 </html>

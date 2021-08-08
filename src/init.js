@@ -1,3 +1,4 @@
+import { complierToRenderFunction } from "./complier";
 import { initState } from "./state";
 
 function initMixin (Vue) {
@@ -17,6 +18,17 @@ function initMixin (Vue) {
   Vue.prototype.$mount = function (el) {
     const vm = this,
           options = vm.$options;
+    el = document.querySelector(el)
+    vm.$el = el;
+
+    if(!options.render) {
+      let template = options.template;
+
+      if(!template && el) {
+        template = el.outerHTML;
+      }
+      vm.render = complierToRenderFunction(template)
+    }
   } 
 }
 

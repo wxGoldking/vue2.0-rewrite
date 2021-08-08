@@ -1,31 +1,16 @@
-import Vue from 'vue';
+import {initState} from './init'
 
-let vm = new Vue({
-  el: "#app",
-  data(){
-    return {
-      title: '学生列表',
-      classNum: 1,
-      teacher: ['张三', '李斯'],
-      info: {
-        a:{
-          b:1
-        }
-      },
-      students: [
-        {
-          id: 1,
-          name: '小红'
-        },
-        {
-          id: 2,
-          name: '小米'
-        }
-      ]
-    }
-  }
-})
-vm.students.push({
-  id: 3, 
-  name: '小白'
-})
+function Vue(options) {
+  this._init(options);
+}
+
+// 初始化方法
+Vue.prototype._init = function(options) {
+  var vm = this;
+  vm.$options = options;
+  // 初始化数据
+  initState(vm);
+}
+
+
+export default Vue;

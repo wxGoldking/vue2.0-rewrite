@@ -4,8 +4,7 @@
   "description": "vue-study-2.0 rewrite",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server",
-    "build": "webpack"
+    "dev": "rollup -c -w"
   },
   "repository": {
     "type": "git",
@@ -18,9 +17,11 @@
   },
   "homepage": "https://github.com/wxGoldking/vue2.0-rewrite#readme",
   "dependencies": {
-    "html-webpack-plugin": "4.4.1",
-    "webpack": "4.44.1",
-    "webpack-cli": "3.3.12",
-    "webpack-dev-server": "3.11.0"
+    "@babel/core": "^7.11.6",
+    "@babel/preset-env": "^7.11.5",
+    "rollup": "^2.26.11",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-serve": "^1.0.4"
   }
 }

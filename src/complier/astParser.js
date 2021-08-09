@@ -26,6 +26,7 @@ function parseHtmlToAst(html) {
       stack = []
   // console.log(html)
 
+  // 主流程： 针对html模板，匹配文本、开始标签、结束标签同时剪裁循环处理的过程
   while(html) {
     let textEnd = html.indexOf('<'); 
     if(textEnd === 0) {
@@ -52,7 +53,6 @@ function parseHtmlToAst(html) {
       advance(text.length)
       chars(text)
     }
-    // break;
   }
 
   function parseStartTag() {

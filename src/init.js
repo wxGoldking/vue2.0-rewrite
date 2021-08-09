@@ -1,5 +1,6 @@
 import { complierToRenderFunction } from "./complier";
 import { initState } from "./state";
+import { mountComponent } from "./lifecycle";
 
 function initMixin (Vue) {
   Vue.prototype._init = function (options) {
@@ -27,8 +28,11 @@ function initMixin (Vue) {
       if(!template && el) {
         template = el.outerHTML;
       }
-      vm.render = complierToRenderFunction(template)
+      const render = complierToRenderFunction(template)
+      options.render = render;
     }
+
+    mountComponent(vm); 
   } 
 }
 

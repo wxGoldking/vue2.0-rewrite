@@ -119,8 +119,7 @@ function getChildren(el) {
 
 function generate (el) {
     let children = getChildren(el);
-    let code = `
-        _c(
+    let code = `_c(
             "${ el.tag }",
             ${
                 el.attrs.length > 0

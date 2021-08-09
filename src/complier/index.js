@@ -7,7 +7,7 @@ function complierToRenderFunction(html) {
         render = new Function(`
           with(this){ return ${code}}
         `)
-        console.log(render)
+        return render;
 }
 
 export {

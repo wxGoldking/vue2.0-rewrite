@@ -19,7 +19,7 @@ function renderMixin(Vue) {
         const vm = this,
               render = vm.$options.render,
               vnode = render.call(vm);
-              console.log(vnode)
+        return vnode;
     }
 }
 

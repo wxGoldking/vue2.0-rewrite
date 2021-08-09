@@ -15,6 +15,7 @@ function renderMixin(Vue) {
         return createTextVnode(text);
     }
 
+    // 执行render函数.call(vm) 返回vnode
     Vue.prototype._render = function () {
         const vm = this,
               render = vm.$options.render,

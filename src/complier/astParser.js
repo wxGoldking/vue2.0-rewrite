@@ -1,3 +1,5 @@
+/* 转化html模板变为ast语法树*/
+
 // 属性
 const attribute = /^\s*([^\s"'<>\/=]+)(?:\s*(=)\s*(?:"([^"]*)"+|'([^']*)'+|([^\s"'=<>`]+)))?/
 // 标签名 <my-header></my-header>
@@ -46,6 +48,7 @@ function parseHtmlToAst(html) {
         continue;
       }
     }
+    // 文本
     if(textEnd > 0) {
       text = html.substring(0, textEnd);
     }
